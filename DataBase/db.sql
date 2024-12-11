@@ -18,12 +18,11 @@ CREATE TABLE Utilisateur (
     idUtilisateur INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
     password VARCHAR(100) NOT NULL,
     tele VARCHAR(15),
-    cin VARCHAR(20) UNIQUE NOT NULL,
+    cin VARCHAR(20)  NOT NULL,
     genre ENUM('Homme', 'Femme'),
-    role ENUM('User', 'Admin') DEFAULT 'User',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -96,3 +95,9 @@ CREATE TABLE Payement (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_payment_order FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE
 );
+INSERT INTO `admin` (`firstName`, `lastName`, `email`, `password`, `tele`, `created_at`)
+VALUES 
+('Admin1', 'Lastname1', 'admin1@example.com', 'admin', '1234567890', NOW()),
+('Admin2', 'Lastname2', 'admin2@example.com', 'admin', '0987654321', NOW()),
+('Admin3', 'Lastname3', 'admin3@example.com', 'admin', '1122334455', NOW()),
+('Admin4', 'Lastname4', 'admin4@example.com', 'admin', '5566778899', NOW());
