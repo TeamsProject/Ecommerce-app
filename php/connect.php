@@ -1,3 +1,3 @@
 <?php 
-$con = mysqli_connect('127.0.0.1','root','','ShopArt')or die('Erreur de connection');
+$con = mysqli_connect('127.0.0.1','root','','shopart')or die('Erreur de connection');
 ?>

@@ -44,8 +44,9 @@ if (isset($_POST["submit"])) {
         echo "<p class='pEreur'>Ce numéro téléphone est déjà utilisé.</p>";
     } else {
 
-        $query = "INSERT INTO `Utilisateur` (`firstName`, `lastName`, `email`, `password`, `cin`, `tele`, `genre`) 
-                  VALUES ('$firstName', '$lastName', '$email', '$password', '$cin', '$tele', '$genre')";
+        $query = "INSERT INTO `utilisateur` (`firstName`, `lastName`, `email`, `password`, `cin`, `tele`,`role`, `genre`) 
+                  VALUES ('$firstName', '$lastName', '$email', '$password', '$cin', '$tele','user', '$genre')";
+        $result = mysqli_query($con, $query);
  
     }
 }

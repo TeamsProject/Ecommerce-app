@@ -31,8 +31,7 @@ CREATE TABLE Products (
     image_url VARCHAR(255),
     category_id INT,
     admin_id INT,
-    CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Categories(id) ON DELETE SET NULL,
-    CONSTRAINT fk_admin FOREIGN KEY (admin_id) REFERENCES Admin(idAdmin) ON DELETE SET NULL
+    CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Categories(id) ON DELETE SET NULL
 );
 
 
@@ -90,3 +89,14 @@ VALUES
 ('Admin2', 'Lastname2', 'admin2@example.com', 'admin', '0987654321','admin', NOW()),
 ('Admin3', 'Lastname3', 'admin3@example.com', 'admin', '1122334455','admin', NOW()),
 ('Admin4', 'Lastname4', 'admin4@example.com', 'admin', '5566778899','admin', NOW());
+INSERT INTO categories (name, description) VALUES
+('Abstract', 'Art that does not attempt to represent external reality, but seeks to achieve its effect using shapes, colors, and textures.'),
+('Landscape', 'Depictions of natural scenery such as mountains, valleys, trees, rivers, and forests.'),
+('Portrait', 'Art focusing on representing a person, capturing their likeness, personality, or mood.'),
+('Still Life', 'Art depicting mostly inanimate objects, like flowers, fruits, or household items.'),
+('Realism', 'Art style that attempts to represent subject matter truthfully, without artificiality.'),
+('Impressionism', 'Art characterized by small, thin brush strokes and an emphasis on light and its changing qualities.'),
+('Surrealism', 'Art that seeks to unleash the creative potential of the unconscious mind, often through dreamlike imagery.'),
+('Expressionism', 'Art emphasizing emotional experience over physical reality, often with bold colors and exaggerated forms.'),
+('Modern', 'Art that embraces innovation and experimentation in form and technique.'),
+('Pop Art', 'Art based on popular culture and mass media, often using bright colors and bold graphics.');

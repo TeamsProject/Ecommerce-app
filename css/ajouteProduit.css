@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f4f6;
+}
+h2{
+    text-shadow: 1px 1px 5px rgba(255, 68, 0, 0.408);
+}
+
+.form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(219, 51, 0, 0.237);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-container input, 
+.form-container select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-container input[type="file"] {
+    padding: 0;
+}
+
+.form-container input:focus, 
+.form-container select:focus {
+    outline: none;
+    border-color: #ff9d4c;
+    box-shadow: 0 0 0 3px rgba(255, 157, 76, 0.2);
+}
+
+.form-container input[type="submit"] {
+    background-color: #ff9d4c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #e88a3e;
+}
+
+.form-container .firstrow, 
+.form-container .secondrow, 
+.form-container .thirdrow {
+    margin-bottom: 1rem;
+}
