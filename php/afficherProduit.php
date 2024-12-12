@@ -26,6 +26,9 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
     <title>Produits</title>
 </head>
 <body>
+    <?php 
+        include("nav.php");
+    ?>
     <div class="container my-5">
         <form action="" method="post" class="w-70 d-flex">
             <select class="form-control w-25" name="category">

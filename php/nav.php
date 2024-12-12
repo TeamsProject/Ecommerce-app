@@ -18,7 +18,7 @@
                 <ul>
                     <li><a class="active" href="home">home</a></li>
                        <li><a href="about">about</a></li>
-                       <li><a href="products">products</a></li>
+                       <li><a href="afficherProduit.php">products</a></li>
                        <li><a href="contact">contact</a></li> 
                        <li><a class="signup" href="sign-up.php">Sign up</a></li>
                        <li><a class="login" href="login.php">Login</a></li>

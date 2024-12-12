@@ -18,7 +18,7 @@
             <h6 class="middle-text">Experience the beauty <span>of art at Shopart</span></h6>
             <p class="paragraph">There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain.</p>
             <div class="button">
-                <a href="product.php">
+                <a href="afficherProduit.php">
                     <button type="submit" value="" class="shop-now">
                         <i class="fa fa-shopping-cart"></i> Shop Now
                     </button>
@@ -53,7 +53,7 @@
             <h5 class="card-title">Portrait Ludwig van Beethoven when composing the Missa Solemnis</h5>
             <h6 class="price">200,000,000 DH</h6>
             <div class="btn-buy">
-                <a href="product.php" ><button class="order-now">order now</button></a>
+                <a href="afficherProduit.php" ><button class="order-now">order now</button></a>
             </div>
     </div>
         <div class="card">
@@ -61,20 +61,20 @@
             <h5 class="card-title">Portrait Ludwig van Beethoven when composing the Missa Solemnis</h5>
             <h6 class="price">200,000,000 DH</h6>
             <div class="btn-buy">
-                <a href="product.php" ><button class="order-now">order now</button></a>
+                <a href="afficherProduit.php" ><button class="order-now">order now</button></a>
             </div>        </div>
         <div class="card">
             <img src="../images/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg" alt="beethoven">
             <h5 class="card-title">Portrait Ludwig van Beethoven when composing the Missa Solemnis</h5>
             <h6 class="price">200,000,000 DH</h6>
             <div class="btn-buy">
-                <a href="product.php" ><button class="order-now">order now</button></a>
+                <a href="afficherProduit.php" ><button class="order-now">order now</button></a>
             </div>        </div>
     </div>
     </section>
     <section class="fourth">
         <h1 class="discount-title">Get 25% off on your first purchase!</h1>
-        <a href="product.php"><button class="announce"> <i class="fa fa-shopping-cart"></i> SHOP NOW</button></a>
+        <a href="afficherProduit.php"><button class="announce"> <i class="fa fa-shopping-cart"></i> SHOP NOW</button></a>
     </section>
     <section class="fifth">
         <h2 class="review-title"> Customers Reviews </h2>
@@ -139,7 +139,7 @@
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Products</a></li>
+              <li><a href="afficherProduit.php">Products</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
           </div>
