@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/navv.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,15 +15,33 @@
                 <div class="line"></div>
             </div>
             <nav class="navbar">
-                <ul>
-                    <li><a class="active" href="home">home</a></li>
-                       <li><a href="about">about</a></li>
-                       <li><a href="afficherProduit.php">products</a></li>
-                       <li><a href="contact">contact</a></li> 
-                       <li><a class="signup" href="sign-up.php">Sign up</a></li>
-                       <li><a class="login" href="login.php">Login</a></li>
-
-                </ul>
+            <!-- <?php
+session_start();
+?> -->
+<ul>
+    <li><a href="home.php " class="active">home</a></li>
+    <li><a class="black-color" href="about.php">about</a></li>
+    <li><a class="black-color" href="afficherProduit.php">products</a></li>
+    <li><a class="black-color" href="contact.php">contact</a></li>
+    <li>
+        <?php
+        if (empty($_SESSION['idUtilisateur'])) {
+            echo "<a class='signup' href='sign-up.php'>sign up</a>";
+        } else {
+            echo "<a class='signup' href='profile.php'>mon profile</a>";
+        }
+        ?>
+    </li>
+    <li>
+        <?php
+        if (empty($_SESSION['idUtilisateur'])) {
+            echo "<a href='login.php'>Login</a>";
+        } else {
+            echo "<a class='login' href='logout.php'>Déconnection</a>";
+        }
+        ?>
+    </li>
+</ul>
             </nav>
         </header>
         <script>

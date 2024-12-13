@@ -47,7 +47,7 @@ if (isset($_POST["submit"])) {
         $query = "INSERT INTO `utilisateur` (`firstName`, `lastName`, `email`, `password`, `cin`, `tele`,`role`, `genre`) 
                   VALUES ('$firstName', '$lastName', '$email', '$password', '$cin', '$tele','user', '$genre')";
         $result = mysqli_query($con, $query);
- 
+        header("location:login.php");
     }
 }
 ?>

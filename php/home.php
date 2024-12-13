@@ -137,10 +137,10 @@
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="home.php">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="afficherProduit.php">Products</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="contact.php">Contact</a></li>
             </ul>
           </div>
           <div class="footer-section">
