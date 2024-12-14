@@ -1,7 +1,6 @@
 <?php
 include('connect.php');
 
-
 if (isset($_POST['add_to_cart'])) {
     $cart_product_name = $_POST['product_name'];
     $cart_product_price = $_POST['product_price'];
@@ -20,10 +19,8 @@ if (isset($_POST['add_to_cart'])) {
     }
 }
 
-
 $category_query = "SELECT * FROM categories";
 $category_result = mysqli_query($con, $category_query) or die("Erreur de la requête");
-
 
 $category_filter = isset($_POST['category']) ? $_POST['category'] : '';
 
@@ -52,7 +49,6 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
 
 <body>
     <?php
-
     if (isset($message) && !empty($message)) {
         foreach ($message as $msg) {
             echo '<div class="message"><span>' . htmlspecialchars($msg) . '</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i></div>';
@@ -63,7 +59,6 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
     <?php include("nav.php"); ?>
 
     <div class="container my-5">
-
         <form action="" method="post" class="w-70 d-flex">
             <select class="form-control w-25" name="category">
                 <option value="">Sélectionner une catégorie</option>
@@ -87,32 +82,24 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
                     $product_description = $row['description'];
                     $product_price = $row['price'];
                     $product_category = $row['category_name'];
-                    $product_image = $row['image_url'];
+                    $product_image = $row['image_url'];  
                     ?>
                     <div class="col-md-3 mb-4">
                         <div class="product-card">
-                            <a href="detailProduit.php?id=<?php echo $row['id']; ?>"
-                                style="text-decoration: none; color: inherit;">
-                                <img src="<?php echo htmlspecialchars($product_image); ?>" class="product-image"
-                                    alt="<?php echo htmlspecialchars($product_name); ?>">
+                            <a href="detailProduit.php?id=<?php echo $row['id']; ?>" style="text-decoration: none; color: inherit;">
+                                <img src="../images/<?php echo htmlspecialchars($product_image); ?>" class="product-image" alt="<?php echo htmlspecialchars($product_name); ?>">
                                 <div class="product-info">
                                     <p class="product-title"><?php echo htmlspecialchars($product_name); ?></p>
-                                    <p class="product-description"><?php echo htmlspecialchars($product_description); ?></p>
                                     <div>
                                         <span class="product-price"><?php echo number_format($product_price, 2); ?> DH</span>
                                     </div>
-                                    <p class="product-category">Catégorie: <?php echo htmlspecialchars($product_category); ?>
-                                    </p>
                                 </div>
                             </a>
 
                             <form method="POST" action="">
                                 <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($product_name); ?>">
-                                <input type="hidden" name="product_price"
-                                    value="<?php echo htmlspecialchars($product_price); ?>">
-                                <input type="hidden" name="product_image"
-                                    value="<?php echo htmlspecialchars($product_image); ?>">
-                                <input type="button" value="Order Now" class="btn btn-order-now">
+                                <input type="hidden" name="product_price" value="<?php echo htmlspecialchars($product_price); ?>">
+                                <input type="hidden" name="product_image" value="<?php echo htmlspecialchars($product_image); ?>">
                                 <input type="submit" value="Add to Cart" class="btn btn-order-now" name="add_to_cart">
                             </form>
                         </div>

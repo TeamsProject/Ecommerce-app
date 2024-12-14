@@ -34,15 +34,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
-    <div class="container mt-5">
+
+    <div class="container my-5">
         <h1 class="text-center mb-4">Ajouter une Catégorie</h1>
-        <form method="POST" action="">
-            <div class="mb-3">
-                <label for="name" class="form-label d-flex justify-content-center align-items-center">Nom de la Catégorie</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <input type="submit" value="Ajouter Categorie" name="submit">
-        </form>
+        <div class="form-container">
+            <form method="POST" action="">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom de la Catégorie</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <input type="submit" value="Ajouter Categorie" class="submit w-50" name="submit">
+                <a href="ajouteProduit.php"><input value="Ajouter Produit" class="submit w-45" name="submit"></a>
+            </form>
+        </div>
     </div>
+
 </body>
 </html>

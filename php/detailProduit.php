@@ -22,10 +22,11 @@ $product = mysqli_fetch_assoc($result);
     <title>Détails du produit</title>
 </head>
 <body>
+<?php include("nav.php"); ?>
     <div class="container w-50">
         <h2 class="product-detail-title"><?php echo htmlspecialchars($product['name']); ?></h2>
         <div class="product-detail-card">
-            <img src="<?php echo $product['image_url']; ?>" class="product-detail-image" alt="<?php echo $product['name']; ?>">
+            <img src="../images/<?php echo $product['image_url']; ?>" class="product-detail-image" alt="<?php echo $product['name']; ?>">
             <p class="product-detail-description"><?php echo htmlspecialchars($product['description']); ?></p>
             <p class="product-detail-price"><?php echo number_format($product['price'], 2); ?> DH</p>
             <p class="product-detail-category">Catégorie : <?php echo htmlspecialchars($product['category_name']); ?></p>
