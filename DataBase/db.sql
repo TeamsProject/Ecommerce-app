@@ -35,22 +35,6 @@ CREATE TABLE Products (
 );
 
 
-CREATE TABLE Cart (
-    cart_id INT AUTO_INCREMENT PRIMARY KEY,
-    utilisateur_id INT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_user_cart FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE
-);
-
-CREATE TABLE CartItems (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cart_id INT,
-    product_id INT,
-    quantity INT NOT NULL,
-    CONSTRAINT fk_cart FOREIGN KEY (cart_id) REFERENCES Cart(cart_id) ON DELETE CASCADE,
-    CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES Products(id) ON DELETE CASCADE
-);
-
 
 CREATE TABLE Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,3 +84,13 @@ INSERT INTO categories (name, description) VALUES
 ('Expressionism', 'Art emphasizing emotional experience over physical reality, often with bold colors and exaggerated forms.'),
 ('Modern', 'Art that embraces innovation and experimentation in form and technique.'),
 ('Pop Art', 'Art based on popular culture and mass media, often using bright colors and bold graphics.');
+
+
+
+CREATE TABLE cart (
+    id INT AUTO_INCREMENT PRIMARY KEY,       
+    name VARCHAR(255) NOT NULL,              
+    price INT NOT NULL,           
+    image VARCHAR(255) NOT NULL,           
+    quantity INT NOT NULL DEFAULT 1          
+);
