@@ -61,7 +61,7 @@ CREATE TABLE Payement (
     idPayement INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     num_cart VARCHAR(16) NOT NULL,
-    date_yaer TINYINT UNSIGNED CHECK (date_year BETWEEN 1 AND 31),
+    date_year TINYINT UNSIGNED CHECK (date_year BETWEEN 24 AND 99),
     date_month TINYINT UNSIGNED CHECK (date_month BETWEEN 1 AND 12),
     cvv_cart SMALLINT UNSIGNED CHECK (cvv_cart BETWEEN 100 AND 999),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
