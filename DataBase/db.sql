@@ -1,4 +1,3 @@
-
 CREATE DATABASE ShopArt;
 USE ShopArt;
 
@@ -65,7 +64,7 @@ CREATE TABLE Payement (
     date_month TINYINT UNSIGNED CHECK (date_month BETWEEN 1 AND 12),
     cvv_cart SMALLINT UNSIGNED CHECK (cvv_cart BETWEEN 100 AND 999),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_payment_order FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE
+    CONSTRAINT fk_payment_order FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 );
 INSERT INTO `Utilisateur` (`firstName`, `lastName`, `email`, `password`, `tele`,`role`, `created_at`)
 VALUES 

@@ -102,7 +102,7 @@ if (isset($_GET['delete_all'])) {
             </table>
 
             <div class="checkout-btn">
-                <a href="payment.php.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Buy</a>
+                <a href="payment.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">Buy</a>
             </div>
 
         </section>
