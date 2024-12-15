@@ -29,7 +29,7 @@ session_start();
       $row_count = mysqli_num_rows($select_rows);
 
       ?>
-    <li><a class='panier' href='cart.php'>cart <span>(<?php echo $row_count; ?>)</span></a></li> 
+    <li><a class='panier' href='cart.php'><img src="../images/panier-icon.png" alt="" class="panier-icon"><span>(<?php echo $row_count; ?>)</span></a></li> 
     <li><a class="black-color" href="contact.php">contact</a></li>
 
     <li>
