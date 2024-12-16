@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/navv.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <title>Document</title>
 </head>
 <body>
@@ -28,9 +29,9 @@ session_start();
       $row_count = mysqli_num_rows($select_rows);
       
       ?>
-    <li><a class='panier' href='cart.php'><img src="../images/panier-icon.png" alt="" class="panier-icon"><span>(<?php echo $row_count; ?>)</span></a></li> 
     <li><a class="black-color" href="contact.php">contact</a></li>
     <li><a class="black-color" href="about.php">about</a></li>
+    <li><a class='panier' href='cart.php'><i class="fa fa-shopping-cart"> </i><span> (<?php echo $row_count; ?>)</span></a></li> 
 
     <li>
         <?php
@@ -44,7 +45,7 @@ session_start();
     <li>
         <?php
         if (empty($_SESSION['idUtilisateur'])) {
-            echo "<a href='login.php'>Login</a>";
+            echo "<a class='login' href='login.php'>Login</a>";
         } else {
             echo "<a class='login' href='logout.php'>Déconnection</a>";
         }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/abou.css">
 
 </head>
 <body>
@@ -44,5 +44,8 @@
             <p>If you have any questions, feedback, or simply want to learn more about us, feel free to <a href="contact.php">get in touch</a>. We'd love to hear from you!</p>
         </div>
     </div>
+    <?php 
+        include("footer.php");
+    ?>    
 </body>
 </html>

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/logine.css">
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="/images/icone.ico">
 </head>
 <body>
+    <div class="fullContainer">
 
     <form method="POST" class="form">
         <div class="container">
@@ -23,6 +24,7 @@ if (isset($_POST["submit"])) {
     if (mysqli_num_rows($result) > 0) {
         $client = mysqli_fetch_assoc($result);
         if ($client['role'] === 'admin') {
+            $_SESSION["idUtilisateur"] = $client["idUtilisateur"];
             $_SESSION['firstname'] = $client['firstName'];
             $_SESSION['lastname'] = $client['lastName'];
             $_SESSION['cin'] = $client['cin'];
@@ -53,6 +55,9 @@ if (isset($_POST["submit"])) {
             <h5>Don't have an account? Sign up <a href="sign-up.php">here</a></h5>
         </div>
     </form>    
-
+    </div>
+    <?php 
+        include("footer.php");
+    ?>    
 </body>
 </html>

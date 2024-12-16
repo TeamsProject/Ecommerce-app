@@ -3,25 +3,32 @@ include "connect.php";
 
 $payment_message = '';
 
-if(isset($_POST["submit"])){
+if (isset($_POST["submit"])) {
     $num_cart = $_POST['num_cart'];
-    $date_month = $_POST['date_month'];
-    $date_year = $_POST['date_year'];
-    $cvv_cart = $_POST['cvv_cart'];
+    $date_month = (int) $_POST['date_month'];
+    $date_year = (int) $_POST['date_year'];
+    $cvv_cart = (int) $_POST['cvv_cart'];
 
-    if (!empty($num_cart) && strlen($num_cart) === 16 && $date_month >= 1 && $date_month <= 12 && $date_year >= 1 && $date_year <= 99 && strlen($cvv_cart) === 3) {
-        $sql = "INSERT INTO Payement ( num_cart, date_year, date_month, cvv_cart, created_at) VALUES ('$num_cart', '$date_year', '$date_month', '$cvv_cart', NOW())";
-        $result = mysqli_query($con, $sql);
+    if (
+        !empty($num_cart) && ctype_digit($num_cart) && strlen($num_cart) === 16 &&
+        $date_month >= 1 && $date_month <= 12 &&
+        $date_year >= 24 && $date_year <= 99 &&
+        $cvv_cart >= 100 && $cvv_cart <= 999
+    ) {
 
-        if ($result) {
-            $payment_message = "<p style='color:green; text-align: center; background: rgb(150, 222, 150);'>Payment processed successfully</p>";
+        $stmt = $con->prepare("INSERT INTO Payement (num_cart, date_year, date_month, cvv_cart, created_at) VALUES (?, ?, ?, ?, NOW())");
+        $stmt->bind_param("siii", $num_cart, $date_year, $date_month, $cvv_cart);
+
+        if ($stmt->execute()) {
+            $payment_message = "<p style='text-align: center;padding:20px;color:white;font-size:18px;border-radius:12px;font-weight:500; text-shadow:1px 1px 1px black; background: rgb(150, 222, 150);'>Payment processed successfully</p>";
         } else {
-            $payment_message = "<p style='color:red; text-align: center;'>Error processing payment: " . mysqli_error($con) . "</p>";
+            $payment_message = "<p style='text-align: center;padding:20px;color:white;font-size:18px;border-radius:12px;font-weight:500; text-shadow:1px 1px 1px black; background: rgb(255, 0, 0);'>Error processing payment: " . $stmt->error . "</p>";
         }
+        $stmt->close();
     } else {
-        $payment_message = "<p style='color:red; text-align: center;'>Invalid payment details. Please try again.</p>";
+        $payment_message = "<p style='text-align: center;padding:20px;color:white;font-size:18px;border-radius:12px;font-weight:500; text-shadow:1px 1px 1px black; background: rgb(255, 0, 0);'>Invalid payment details. Please ensure card details are correct.</p>";
     }
-} 
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +52,11 @@ if(isset($_POST["submit"])){
                 <input type="text" name="num_cart" placeholder="Card Number" maxlength="16" required>
             </div>
             <div class="second_row">
-                <input type="number" name="date_month" placeholder="Expiry Month (MM)" min="1" max="12" required>
-                <input type="number" name="date_year" placeholder="Expiry Year (YY)" min="1" max="31" required>
+                <input type="number" name="date_month" maxlength="16" placeholder="Expiry Month (MM)" min="1" max="12" required>
+                <input type="number" name="date_year" maxlength="2" placeholder="Expiry Year (YY)" min="1" max="31" required>
             </div>
             <div class="third_row">
-                <input type="number" name="cvv_cart" placeholder="CVV" maxlength="3" required>
+                <input type="number" name="cvv_cart" placeholder="CVV" maxlength="3" min="0" max="999" required>
             </div>
             <div class="subDiv">
                 <button type="submit" class="submit" name="submit">Confirmation</button>

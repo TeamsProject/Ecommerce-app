@@ -38,7 +38,7 @@ if (isset($_GET['delete_all'])) {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/carte.css">
 
 </head>
 
@@ -108,7 +108,9 @@ if (isset($_GET['delete_all'])) {
         </section>
 
     </div>
-
+    <?php 
+        include("footer.php");
+    ?>    
 
 
 </body>

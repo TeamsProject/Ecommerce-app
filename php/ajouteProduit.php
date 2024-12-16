@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un Produit</title>
-    <link rel="stylesheet" href="../css/ajouteProduit.css">
+    <link rel="stylesheet" href="../css/ajouteProdui.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 

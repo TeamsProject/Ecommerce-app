@@ -58,14 +58,14 @@
     </div>
         <div class="card">
             <img src="../images/Das-Maedchen-mit-dem-Perlenohrring-Restaurierte-Version-ab-1994.jpg" alt="beethoven">
-            <h5 class="card-title">Portrait Ludwig van Beethoven when composing the Missa Solemnis</h5>
+            <h5 class="card-title">Girl with a Pearl Earring by Johannes Vermeer (1665)</h5>
             <h6 class="price">200,000,000 DH</h6>
             <div class="btn-buy">
                 <a href="afficherProduit.php" ><button class="order-now">order now</button></a>
             </div>        </div>
         <div class="card">
             <img src="../images/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg" alt="beethoven">
-            <h5 class="card-title">Portrait Ludwig van Beethoven when composing the Missa Solemnis</h5>
+            <h5 class="card-title">Mona Lisa by Leonardo da Vinci (1503-1505)</h5>
             <h6 class="price">200,000,000 DH</h6>
             <div class="btn-buy">
                 <a href="afficherProduit.php" ><button class="order-now">order now</button></a>
@@ -128,33 +128,8 @@
         </div>
     </div>
     </section>
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <h4>About Us</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-          </div>
-          <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="home.php">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="afficherProduit.php">Products</a></li>
-              <li><a href="contact.php">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Contact Us</h4>
-            <p>Email: shopart@shopart.com</p>
-            <p>Phone: +212 626622662</p>
-            <p>Address: bin lamdoun CMFP lalla Aicha st-29, </p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Shopart. All Rights Reserved.</p>
-          <p>Shopart | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </div>
-      </footer>
-      
+    <?php 
+        include("footer.php");
+    ?>      
 </body>
 </html>

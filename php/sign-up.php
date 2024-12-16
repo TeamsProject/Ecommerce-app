@@ -5,11 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <title>Sign Up</title>
     <link rel="icon" type="image/x-icon" href="/images/icone.ico">
 </head>
 <body>
+    <div class="fullContainer">
 
     <form method="POST" class="form">
         <div class="container">
@@ -87,6 +88,9 @@ if (isset($_POST["submit"])) {
         </div>
         
     </form>    
-
+    </div>
+    <?php 
+        include("footer.php");
+    ?>    
 </body>
 </html>

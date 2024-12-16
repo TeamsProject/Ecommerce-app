@@ -11,6 +11,14 @@
     <?php 
         include("nav.php");
     ?>
+<div class="contact-intro">
+  <p>
+    Have questions, suggestions, or need assistance? We'd love to hear from you! 
+    Whether you're looking for more information about our products or need support, 
+    our team is here to help. Reach out to us through the form below, and we'll get 
+    back to you as soon as possible. Your satisfaction is our top priority!
+  </p>
+</div>
     <div class="container">
         <div class="header">
             <?php 
@@ -37,5 +45,8 @@
             <button type="submit" name="submit" class="btn">Send</button>
         </form>
     </div>
+    <?php 
+        include("footer.php");
+    ?>    
 </body>
 </html>

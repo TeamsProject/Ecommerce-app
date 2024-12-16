@@ -40,7 +40,7 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
     <link rel="stylesheet" href="../css/afficherProduit.css">
     <link rel="stylesheet" href="../css/message.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -112,6 +112,9 @@ $result = mysqli_query($con, $query) or die("Erreur de la requête");
             ?>
         </div>
     </div>
+    <?php 
+        include("footer.php");
+    ?>    
 </body>
 
 </html>

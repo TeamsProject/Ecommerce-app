@@ -39,6 +39,9 @@ html{
    margin-bottom: 2rem;
 }
 
+.btn{
+   margin-bottom: 20px;  
+}
 .btn,
 .option-btn,
 .delete-btn{
